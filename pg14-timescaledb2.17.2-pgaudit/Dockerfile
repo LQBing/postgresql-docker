@@ -1,5 +1,6 @@
-ARG PG_MAJOR=15
-FROM timescale/timescaledb:latest-pg${PG_MAJOR}
+ARG PG_MAJOR=14
+ARG TIMESCALEDB_VERSION=2.17.2
+FROM timescale/timescaledb:${TIMESCALEDB_VERSION}-pg${PG_MAJOR}
 
 RUN set -ex \
     && apk add --no-cache --virtual .fetch-deps \
